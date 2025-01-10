@@ -10,6 +10,7 @@ metadata:
         source:
             repoURL: https://github.com/khantnaingset-kns/otel-nest-dice
             targetRevision: main
+            path: dice-chart
             helm:
                 releaseName: otel-nest-dice
         destination:
