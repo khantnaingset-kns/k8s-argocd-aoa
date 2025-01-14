@@ -11,7 +11,7 @@ spec:
       chart: victoria-metrics-single
       helm:
        valueFiles:
-        - $values/victoria-metrics-values.yaml
+        - $values/values/victoria-metrics-values.yaml
     - repoURL: https://github.com/khantnaingset-kns/k8s-argocd-aoa.git
       targetRevision: HEAD
       ref: values
