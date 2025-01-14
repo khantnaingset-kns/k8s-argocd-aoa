@@ -11,7 +11,7 @@ datasources:
           updateIntervalSeconds: 10
           editable: true
 
-  dashboardProviders:
+dashboardProviders:
    dashboardproviders.yaml:
      apiVersion: 1
      providers:
