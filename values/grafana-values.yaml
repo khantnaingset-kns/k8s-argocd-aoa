@@ -5,7 +5,7 @@ datasources:
         - name: victoriametrics
           type: prometheus
           orgId: 1
-          url: http://vmsingle-victoria-metrics-single-server.default.svc.cluster.local:8428
+          url: http://victoria-metrics-single-server.monitoring.svc.cluster.local:8428
           access: proxy
           isDefault: true
           updateIntervalSeconds: 10
@@ -24,7 +24,7 @@ dashboardProviders:
        options:
          path: /var/lib/grafana/dashboards/default
 
-  dashboards:
+ dashboards:
     default:
       victoriametrics:
         gnetId: 10229
