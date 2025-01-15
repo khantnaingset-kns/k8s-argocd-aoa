@@ -12,8 +12,8 @@ spec:
     helm:
       ignoreMissingValueFiles: true
       releaseName: grafana
-      valuesFiles:
-      - values/values/grafana-values.yaml
+      valueFiles:
+      - $values/values/grafana-values.yaml
   - repoURL: https://github.com/khantnaingset-kns/k8s-argocd-aoa.git
     targetRevision: main
     ref: values
