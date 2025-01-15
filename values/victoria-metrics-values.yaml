@@ -43,7 +43,7 @@ server:
             - source_labels: [ __meta_kubernetes_node_name ]
               regex: (.+)
               target_label: __metrics_path__
-              replacement: /api/v1/nodes/\$1/proxy/metrics
+              replacement: /api/v1/nodes/{$1}/proxy/metrics
         - job_name: "kubernetes-nodes-cadvisor"
           scheme: https
           tls_config:
@@ -60,7 +60,7 @@ server:
             - source_labels: [ __meta_kubernetes_node_name ]
               regex: (.+)
               target_label: __metrics_path__
-              replacement: /api/v1/nodes/\$1/proxy/metrics/cadvisor
+              replacement: /api/v1/nodes/{$1cl}/proxy/metrics/cadvisor
           metric_relabel_configs:
             - action: replace
               source_labels: [pod]
