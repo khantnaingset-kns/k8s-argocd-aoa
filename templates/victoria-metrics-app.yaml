@@ -1,26 +1,26 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: victoria-metrics-single
-#   namespace: argocd
-# spec:
-#   project: default
-#   sources:
-#     - repoURL: https://victoriametrics.github.io/helm-charts/
-#       targetRevision: 0.9.9
-#       chart: victoria-metrics-single
-#       helm:
-#        valueFiles:
-#         - $values/values/victoria-metrics-values.yaml
-#     - repoURL: https://github.com/khantnaingset-kns/k8s-argocd-aoa.git
-#       targetRevision: HEAD
-#       ref: values
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: monitoring
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: victoria-metrics-single
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://victoriametrics.github.io/helm-charts/
+      targetRevision: 0.9.9
+      chart: victoria-metrics-single
+      helm:
+       valueFiles:
+        - $values/values/victoria-metrics-values.yaml
+    - repoURL: https://github.com/khantnaingset-kns/k8s-argocd-aoa.git
+      targetRevision: HEAD
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
