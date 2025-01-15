@@ -13,7 +13,7 @@ spec:
        valuesFiles:
         - $values/values/grafana-values.yaml
     - repoURL: https://github.com/khantnaingset-kns/k8s-argocd-aoa.git
-      targetRevision: main
+      targetRevision: HEAD
       ref: values
   destination:
     server: https://kubernetes.default.svc
