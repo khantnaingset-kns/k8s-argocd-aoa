@@ -1,22 +1,22 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: otel-nest-dice
-#   namespace: argocd
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:                           # Fixed indentation here
-#   project: default
-#   source:
-#     repoURL: git@github.com:khantnaingset-kns/otel-nest-dice.git
-#     targetRevision: main
-#     path: dice-chart
-#     helm:
-#       releaseName: otel-nest-dice
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: default
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otel-nest-dice
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:                           # Fixed indentation here
+  project: default
+  source:
+    repoURL: https://github.com/khantnaingset-kns/otel-nest-dice.git
+    targetRevision: main
+    path: dice-chart
+    helm:
+      releaseName: otel-nest-dice
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
